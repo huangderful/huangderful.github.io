@@ -15,7 +15,12 @@ Command used: ab -n 100000 -c 1 -t 10 http://huangderful.github.io/ # with varyi
 
 2. Why are there diminishing returns at higher concurrency levels?
 Web server constraints: there is only so much memory and threads allowed for each process and once that cap is hit you don't get as much in return. Also network constraints on server and client side because you might hit bandwidth caps. Last thing I can think of are that the server may not allow that many connections at once to a given IP for load balancing purposes.
+
 3. What’s the performance difference when requesting HTTP and HTTPS?
+HTTP is unencrypted versus HTTPS is encrypted and rus over TLS which means there're additional steps and thus HTTPS is faster.
 
 4. How can GitHub respond so quickly?
+Good design! They have efficient infrastructure with loadbalancers, CDN usage, and lots of caching
+
 5. What is your site’s “Total Blocking Time” (TBT) according to PageSpeed Insights?
+0 ms
